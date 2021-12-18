@@ -1,5 +1,0 @@
-.prose {
-  code::before, code::after {
-    display: none;
-  }
-}

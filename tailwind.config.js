@@ -2,16 +2,7 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 const colors = require("tailwindcss/colors")
 
 module.exports = {
-  mode: "jit",
-
-  plugins: [
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/typography"),
-    require('@tailwindcss/line-clamp'),
-  ],
-
-  purge: [
+  content: [
     "./app/components/**/*.{rb,html,html.erb,yml}",
     "./app/helpers/**/*.rb",
     "./app/javascript/**/*.js",
@@ -43,10 +34,10 @@ module.exports = {
     },
   },
 
-  variants: {
-    extend: {
-      borderColor: ["focus-visible"],
-      opacity: ["disabled"],
-    }
-  }
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/typography"),
+    require('@tailwindcss/line-clamp'),
+  ]
 }

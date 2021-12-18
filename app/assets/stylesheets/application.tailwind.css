@@ -1,6 +1,72 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-@import "tailwindcss/overrides";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import "components/pagy";
+@layer components {
+  .prose {
+    code::before, code::after {
+      display: none;
+    }
+  }
+}
+
+/*Pagination*/
+.pagy-nav {
+  @apply flex space-x-2 mb-8 justify-center;
+}
+
+.pagy-nav .page a,
+.pagy-nav .page.active,
+.pagy-nav .page.prev.disabled,
+.pagy-nav .page.next.disabled {
+  @apply block rounded-lg px-3 py-1 text-sm text-gray-500 font-semibold bg-gray-200;
+}
+
+.pagy-nav:hover .page a:hover,
+.pagy-nav:hover .page.active:hover,
+.pagy-nav:hover .page.prev.disabled:hover,
+.pagy-nav:hover .page.next.disabled:hover {
+  @apply bg-gray-300;
+}
+
+.pagy-nav:active .page a:active,
+.pagy-nav:active .page.active:active,
+.pagy-nav:active .page.prev.disabled:active,
+.pagy-nav:active .page.next.disabled:active {
+  @apply bg-gray-400 text-white;
+}
+
+
+.pagy-nav .page.prev.disabled,
+.pagy-nav .page.next.disabled {
+  @apply text-gray-400 cursor-default;
+}
+
+.pagy-nav:hover .page.prev.disabled:hover,
+.pagy-nav:hover .page.next.disabled:hover {
+  @apply text-gray-400 bg-gray-200;
+}
+
+.pagy-nav:active .page.prev.disabled:active,
+.pagy-nav:active .page.next.disabled:active {
+  @apply text-gray-400 bg-gray-200;
+}
+
+
+.pagy-nav .page.active {
+  @apply text-white cursor-default bg-gray-400;
+}
+
+.pagy-nav:hover .page.active:hover {
+  @apply text-white bg-gray-400;
+}
+
+.pagy-nav:active .page.active:active {
+  @apply bg-gray-400 text-white;
+}
+
+
+.pagy-combo-input {
+  @apply bg-white px-2 rounded-sm
+}
+
